@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+    <filter>
+        <description>Expense Tracker session filter for every request</description>
+        <display-name>ExpTrackerSessionFilter</display-name>
+        <filter-name>ExpTrackerSessionFilter</filter-name>
+        <filter-class>com.expensetracker.servlet.ExpTrackerSessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ExpTrackerSessionFilter</filter-name>
+        <url-pattern>/user/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <description>Deployment descriptor for Expense Tracker</description>
+    <context-param>
+        <param-name>login_page</param-name>
+        <param-value>/Login.jsp?cLogin</param-value>
+    </context-param>
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/Error.jsp</location>
+    </error-page>
+    <jsp-config/>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/Login.jsp</form-login-page>
+            <form-error-page>/Error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <distributable/>
+    <servlet>
+        <description>This is a Front Controller implementation. </description>
+        <display-name>ExpController</display-name>
+        <servlet-name>ExpController</servlet-name>
+        <servlet-class>com.expensetracker.util.ExpController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpController</servlet-name>
+        <url-pattern>/user/*</url-pattern>
+    </servlet-mapping>
+    <display-name>Expense Tracker Application</display-name>
+</web-app>

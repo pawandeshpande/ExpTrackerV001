@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <persistence-unit name="ExpenseTracker" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/mysqlconnDS</jta-data-source>
+    <class>com.expensetracker.bean.Borrower</class>
+    <class>com.expensetracker.bean.Company</class>
+    <class>com.expensetracker.bean.Event</class>
+    <class>com.expensetracker.bean.ExpenseType</class>
+    <class>com.expensetracker.bean.Expenses</class>
+    <class>com.expensetracker.bean.PaymentMode</class>
+    <class>com.expensetracker.bean.User</class>
+    <properties>
+      <property name="eclipselink.weaving" value="static"/>
+      
+      <property name="eclipselink.logging.level.sql" value="FINEST"/>
+      <property name="eclipselink.logging.level" value="FINEST"/>
+      <property name="eclipselink.logging.level.cache" value="FINEST"/>
+
+      <property name="eclipselink.target-server" value="OC4J"/>
+
+      <!--<property name="javax.persistence.jtaDataSource"
+                value="java:/app/jdbc/jdbc/mysqlconnDS"/>-->
+      <property name="eclipselink.target-database" value="MySQL4"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="jdbc/mysqlconnDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

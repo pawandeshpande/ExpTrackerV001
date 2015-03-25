@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-ejb-jar xmlns="http://www.bea.com/ns/weblogic/10.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/10.0 http://www.bea.com/ns/weblogic/10.0/weblogic-ejb-jar.xsd">
+  <!--  <weblogic-enterprise-bean>
+        <ejb-name>SessionEJB</ejb-name>
+        <Stateless-session-descriptor>
+            <business-interface-jndi-name-map>
+                <business-remote>com.expensetracker.bean.SessionEJB</business-remote>
+                <jndi-name>SessionEJB</jndi-name>
+            </business-interface-jndi-name-map>
+        </Stateless-session-descriptor>
+    </weblogic-enterprise-bean> -->
+    <weblogic-enterprise-bean>
+        <ejb-name>SessionEJB</ejb-name>
+        <jndi-name>SessionEJB</jndi-name>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

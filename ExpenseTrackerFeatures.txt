@@ -1,0 +1,4 @@
+1) Add validation for login/logout in every page. : Every page should check for a valid user
+and company object. IF the object is not present, then the user is directed to the login page. 
+
+2) 
