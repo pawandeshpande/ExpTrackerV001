@@ -13,8 +13,18 @@
   </head>
   <body>
  
-  <%! double TotalAmount = 0.00; %>
-  
+  <%! double TotalAmount = 0.00;
+     
+     String txtExportExcel = request.getParameter("exportToExcel");
+        if (txtExportExcel != null
+                && txtExportExcel.toString().equalsIgnoreCase("YES")) {
+            response.setContentType("application/vnd.ms-excel");
+            response.setHeader("Content-Disposition", "inline; filename="
+                    + "excel.xls");
+ 
+        }
+    %>
+
   <form name="expenseform" action="#" method="POST">
             <h2>
               <u>
